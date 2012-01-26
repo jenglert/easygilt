@@ -2,16 +2,15 @@ class SearchController < ApplicationController
   def index
     @query = params[:query]
 
-    unless @query == ''
+    if !@query.nil?  && @query != ''
       @results = do_search(@query)
     end
   end
 
   def do_search(query)
     Product.find(:all, :conditions => [
-      "lower(name) like ? or lower(description) like ?",
-      "%#{query}%",
-      "%#{query}%"
+        "to_tsvector('english', description) @@ to_tsquery('english', ?)",
+        query
       ])
   end
 

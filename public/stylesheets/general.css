@@ -1,9 +1,22 @@
 * { padding: 0px; margin: 0px; }
+A { text-decoration: none; color: black }
+A:HOVER { text-decoration: none; color: black }
+A:VISITED { text-decoration: none; color: black }
+clearBoth { clear: both; }
 
+.bottom { margin: auto; width: 1125px; }
+
+.leftAd { float: left; }
+.results { float: left; }
+.rightAd { float: left; }
+
+/** Search Bar **/
+.searchBar { border-bottom: 10px solid gold; }
+.searchBar .searchInput { font-size: 30px; width: 100%; }
 
 /** Result item styling **/
-.resultItem { height: 140px; width: 780px; border: 1px solid gray; }
-.resultItem .image { float: left;}
-.resultItem .image IMG { padding: 10px; }
+.resultItem { height: 140px; width: 780px; border: 1px solid gray; position: relative; padding-left: 10px; margin: 5px;}
+.resultItem .image { float: left; }
+.resultItem .image IMG { padding-top: 10px; padding-right: 10px; }
 .resultItem .information { float: left; padding-top: 14px; }
 .resultItem .information .name { font-size: 26px; }

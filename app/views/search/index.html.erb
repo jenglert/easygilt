@@ -1,20 +1,47 @@
 
-<% form_tag url_for(:action => :index) do -%>
-  <%= text_field_tag :query, "" %>
-  <%= submit_tag "Search" %>
-<% end -%>
-
-<% unless @results.nil? %>
-  <h3>Results for the search query "<%= @query %>":</h3>
-  <% if @results.count == 0 %>
-    No matches found.
-  <% else %>
-    <%= @results.count %> products found.
-    <ul>
-    <% @results.each do |row| -%>
-      <li><%= link_to row.name, row.url %></li>
+<div class="searchBar">
+    <% form_tag url_for(:action => :index) do -%>
+      <%= text_field_tag :query, "", :class => "searchInput" %>
     <% end -%>
-    </ul>
-  <% end %>
-<% end -%>
+</div>
 
+<div class="bottom">
+    <div class="leftAd">
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-7279077462237001";
+        /* easygilt ad */
+        google_ad_slot = "9663391981";
+        google_ad_width = 160;
+        google_ad_height = 600;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+    <div class="results">
+        <% unless @results.nil? %>
+          <% if @results.count == 0 %>
+            Nothing found...
+          <% else %>
+            <% @results.each do |product| -%>
+              <%= render :partial => 'result_item', :locals => { :product => product } %>
+            <% end -%>
+          <% end %>
+        <% end -%>
+        <div class="clearBoth"></div>
+    </div>
+    <div class="rightAd">
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-7279077462237001";
+        /* easygilt ad */
+        google_ad_slot = "9663391981";
+        google_ad_width = 160;
+        google_ad_height = 600;
+        //-->
+        </script>
+        <script type="text/javascript"
+        src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>

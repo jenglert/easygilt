@@ -1,13 +1,13 @@
 <div class="resultItem">
     <div class="image">
-        <a href="<%=product.url %>">
-            <% product.top_three_images.each do |image| %>
-                <img src="<%= image.image_url %>" />
-            <% end %>
-        </a>
+        <% product.top_three_images.each do |image| %>
+            <a href="<%= product.url %>">
+                <img src="<%= image.image_url %>" width="91px" height="121px" />
+            </a>
+        <% end %>
     </div>
     <div class="information">
-        <div class="name"><%= product.name %></div>
+        <div class="name"><%= link_to product.name, product.url, :target => '_blank' %></div>
         <div class="brand"><%= product.brand %></div>
         <div class="material"><%= product.material %></div>
     </div>
