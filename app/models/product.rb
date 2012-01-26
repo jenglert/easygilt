@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   has_many :product_images
   has_many :product_skus
+  has_many :product_hot_votes
 
   def top_three_images
     product_images[0..2]

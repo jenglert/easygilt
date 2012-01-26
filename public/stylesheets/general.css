@@ -26,3 +26,8 @@ clearBoth { clear: both; }
 .resultItem .information .material {  }
 .resultItem .information .brand {  }
 .resultItem .label { color: gold; font-weight: bold; }
+
+/** Hot styling **/
+.hot_container { width: 200px; margin: 0 auto; }
+.hot_competitor_container { width: 100px; float: left; }
+.hot_competitor_container img { display: block; }
