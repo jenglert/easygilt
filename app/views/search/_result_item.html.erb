@@ -1,0 +1,14 @@
+<div class="resultItem">
+    <div class="image">
+        <a href="<%=product.url %>">
+            <% product.top_three_images.each do |image| %>
+                <img src="<%= image.image_url %>" />
+            <% end %>
+        </a>
+    </div>
+    <div class="information">
+        <div class="name"><%= product.name %></div>
+        <div class="brand"><%= product.brand %></div>
+        <div class="material"><%= product.material %></div>
+    </div>
+</div>

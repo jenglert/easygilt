@@ -1,0 +1,9 @@
+* { padding: 0px; margin: 0px; }
+
+
+/** Result item styling **/
+.resultItem { height: 140px; width: 780px; border: 1px solid gray; }
+.resultItem .image { float: left;}
+.resultItem .image IMG { padding: 10px; }
+.resultItem .information { float: left; padding-top: 14px; }
+.resultItem .information .name { font-size: 26px; }
