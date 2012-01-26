@@ -21,8 +21,13 @@ clearBoth { clear: both; }
 .resultItem { height: 140px; width: 780px; border: 1px solid gray; position: relative; padding-left: 10px; margin: 5px; background-color: #F2F2F0;  }
 .resultItem .image { float: left; }
 .resultItem .image IMG { padding-top: 10px; padding-right: 10px; }
-.resultItem .information { float: left; padding-top: 14px; }
+.resultItem .information { float: left; padding-top: 14px; width: 450px; overflow: hidden; }
 .resultItem .information .name { font-size: 26px; }
 .resultItem .information .material {  }
 .resultItem .information .brand {  }
 .resultItem .label { color: gold; font-weight: bold; }
+
+/** Hot styling **/
+.hot_container { width: 200px; margin: 0 auto; margin-top: 30px; }
+.hot_competitor_container { width: 100px; float: left; }
+.hot_competitor_container img { display: block; width: 80px; margin-bottom: 10px; }
