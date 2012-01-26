@@ -1,7 +1,7 @@
 
 <div class="searchBar">
-    <% form_tag url_for(:action => :index) do -%>
-      <%= text_field_tag :query, "", :class => "searchInput" %>
+    <% form_tag url_for(:action => :index) do %>
+      <%= text_field_tag :query, "SEARCH HERE", :class => "searchInput", :autocomplete => "off" %>
     <% end -%>
 </div>
 
@@ -19,17 +19,17 @@
         src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
         </script>
     </div>
-    <div class="results">
-        <% unless @results.nil? %>
-          <% if @results.count == 0 %>
-            Nothing found...
-          <% else %>
-            <% @results.each do |product| -%>
-              <%= render :partial => 'result_item', :locals => { :product => product } %>
-            <% end -%>
-          <% end %>
+    <div class="results" id="results">
+      <% if @results.nil? || @results.count == 0 %>
+        <div class="resultItem">
+            <div class="noItem">Nothing Found</div>
+        </div>
+      <% else %>
+        <% @results.each do |product| -%>
+          <%= render :partial => 'result_item', :locals => { :product => product } %>
         <% end -%>
-        <div class="clearBoth"></div>
+      <% end %>
+      <div class="clearBoth"></div>
     </div>
     <div class="rightAd">
         <script type="text/javascript"><!--

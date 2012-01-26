@@ -1,3 +1,4 @@
+<% cache(:action_suffix => "product#{product.id}") do %>
 <div class="resultItem">
     <div class="image">
         <% product.top_three_images.each do |image| %>
@@ -7,8 +8,11 @@
         <% end %>
     </div>
     <div class="information">
-        <div class="name"><%= link_to product.name, product.url, :target => '_blank' %></div>
-        <div class="brand"><%= product.brand %></div>
-        <div class="material"><%= product.material %></div>
+        <div class="name"><%= link_to truncate(product.name, 30, '...'), product.url, :target => '_blank' %></div>
+        <div class="brand"><span class="label">brand:</span> <%= truncate(product.brand, 55, '...') %></div>
+        <div class="sizes"><span class="label">size:</span> <%= truncate(product.size_string, 55, '...') %></div>
+        <div class="colors"><span class="label">colors:</span> <%= truncate(product.colors_string, 55, '...')%></div>
+        <div class="material"><span class="label">material:</span> <%= truncate(product.material, 55, '...') %></div>
     </div>
 </div>
+<% end %>

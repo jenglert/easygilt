@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  term: MyString
+  count: 1
+  product_id: 1
+
+two:
+  term: MyString
+  count: 1
+  product_id: 1

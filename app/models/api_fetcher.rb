@@ -5,6 +5,55 @@ class ApiFetcher
 
   API_KEY = "2a79c53507fe657d88a685380bf46021"
 
+  STOP_WORDS = [ "a", "about", "above", "above", "across", "after", "afterwards", "again", "against", "all", "almost", "alone", "along", "already", "also","although","always","am","among", "amongst", "amoungst", "amount",  "an", "and", "another", "any","anyhow","anyone","anything","anyway", "anywhere", "are", "around", "as",  "at", "back","be","became", "because","become","becomes", "becoming", "been", "before", "beforehand", "behind", "being", "below", "beside", "besides", "between", "beyond", "bill", "both", "bottom","but", "by", "call", "can", "cannot", "cant", "co", "con", "could", "couldnt", "cry", "de", "describe", "detail", "do", "done", "down", "due", "during", "each", "eg", "eight", "either", "eleven","else", "elsewhere", "empty", "enough", "etc", "even", "ever", "every", "everyone", "everything", "everywhere", "except", "few", "fifteen", "fify", "fill", "find", "fire", "first", "five", "for", "former", "formerly", "forty", "found", "four", "from", "front", "full", "further", "get", "give", "go", "had", "has", "hasnt", "have", "he", "hence", "her", "here", "hereafter", "hereby", "herein", "hereupon", "hers", "herself", "him", "himself", "his", "how", "however", "hundred", "ie", "if", "in", "inc", "indeed", "interest", "into", "is", "it", "its", "itself", "keep", "last", "latter", "latterly", "least", "less", "ltd", "made", "many", "may", "me", "meanwhile", "might", "mill", "mine", "more", "moreover", "most", "mostly", "move", "much", "must", "my", "myself", "name", "namely", "neither", "never", "nevertheless", "next", "nine", "no", "nobody", "none", "noone", "nor", "not", "nothing", "now", "nowhere", "of", "off", "often", "on", "once", "one", "only", "onto", "or", "other", "others", "otherwise", "our", "ours", "ourselves", "out", "over", "own","part", "per", "perhaps", "please", "put", "rather", "re", "same", "see", "seem", "seemed", "seeming", "seems", "serious", "several", "she", "should", "show", "side", "since", "sincere", "six", "sixty", "so", "some", "somehow", "someone", "something", "sometime", "sometimes", "somewhere", "still", "such", "system", "take", "ten", "than", "that", "the", "their", "them", "themselves", "then", "thence", "there", "thereafter", "thereby", "therefore", "therein", "thereupon", "these", "they", "thickv", "thin", "third", "this", "those", "though", "three", "through", "throughout", "thru", "thus", "to", "together", "too", "top", "toward", "towards", "twelve", "twenty", "two", "un", "under", "until", "up", "upon", "us", "very", "via", "was", "we", "well", "were", "what", "whatever", "when", "whence", "whenever", "where", "whereafter", "whereas", "whereby", "wherein", "whereupon", "wherever", "whether", "which", "while", "whither", "who", "whoever", "whole", "whom", "whose", "why", "will", "with", "within", "without", "would", "yet", "you", "your", "yours", "yourself", "yourselves", "the"]
+
+  def ApiFetcher.reload_products
+
+    Product.find_in_batches do |products|
+       products.each do |product|
+         keys = {}
+         ApiFetcher.count_words(product.name, keys, 4)
+         ApiFetcher.count_words(product.description, keys)
+         ApiFetcher.count_words(product.material, keys)
+         ApiFetcher.count_words(product.origin, keys)
+         ApiFetcher.count_words(product.brand, keys)
+         product.product_skus.each do |product_sku|
+           product_sku.product_sku_attributes.each do |product_sku_attribute|
+             ApiFetcher.count_words(product_sku_attribute.value, keys)
+            end
+         end
+
+         keys.each do |word, count|
+           SearchTerm.create!(:product_id => product.id, :term => word, :count => count)
+         end
+       end
+     end
+  end
+
+  def ApiFetcher.clean_phrase(phrase)
+    return [] if phrase.nil?
+
+    words = []
+
+    phrase.split.each do |word|
+      word = word.downcase.gsub(/[^a-z]/, "")
+
+      next if word == ''
+      next if STOP_WORDS.include?(word)
+      next if word.size < 3
+
+      words << word
+    end
+  end
+
+  def ApiFetcher.count_words(phrase, keys, multiplier = 1)
+    words = ApiFetcher.clean_phrase(phrase)
+    words.each do |word|
+      keys[word] ||= 0
+      keys[word] = keys[word] + multiplier
+    end
+  end
+
   def ApiFetcher.fetch_api_file
     site = "api.gilt.com"
     url_path = "/v1/sales/active.json?apikey=#{API_KEY}&product_detail=true"

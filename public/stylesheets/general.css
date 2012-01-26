@@ -4,19 +4,25 @@ A:HOVER { text-decoration: none; color: black }
 A:VISITED { text-decoration: none; color: black }
 clearBoth { clear: both; }
 
+.body { background-color: black; }
+
 .bottom { margin: auto; width: 1125px; }
 
-.leftAd { float: left; }
+.leftAd { float: left; padding-top: 10px; }
 .results { float: left; }
-.rightAd { float: left; }
+.rightAd { float: left; padding-top: 10px; }
 
 /** Search Bar **/
 .searchBar { border-bottom: 10px solid gold; }
-.searchBar .searchInput { font-size: 30px; width: 100%; }
+.searchBar .searchInput { font-size: 35px;  color: gold; width: 100%; text-align: center; }
 
 /** Result item styling **/
-.resultItem { height: 140px; width: 780px; border: 1px solid gray; position: relative; padding-left: 10px; margin: 5px;}
+.noItem { font-size: 30px; color: gold; text-align: center; padding-top: 50px;}
+.resultItem { height: 140px; width: 780px; border: 1px solid gray; position: relative; padding-left: 10px; margin: 5px; background-color: #F2F2F0;  }
 .resultItem .image { float: left; }
 .resultItem .image IMG { padding-top: 10px; padding-right: 10px; }
 .resultItem .information { float: left; padding-top: 14px; }
 .resultItem .information .name { font-size: 26px; }
+.resultItem .information .material {  }
+.resultItem .information .brand {  }
+.resultItem .label { color: gold; font-weight: bold; }

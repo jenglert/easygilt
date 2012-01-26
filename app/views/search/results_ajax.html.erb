@@ -1,0 +1,10 @@
+<% if @results.nil? || @results.count == 0 %>
+  <div class="resultItem">
+      <div class="noItem">Nothing Found</div>
+  </div>
+<% else %>
+  <% @results.each do |product| -%>
+    <%= render :partial => 'result_item', :locals => { :product => product } %>
+  <% end -%>
+<% end %>
+<div class="clearBoth"></div>
