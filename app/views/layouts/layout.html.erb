@@ -18,10 +18,13 @@
 
         //setup before functions
         var typingTimer;                //timer identifier
-        var doneTypingInterval = 1000;  //time in ms, 5 second for example
+        var doneTypingInterval = 1000;  //time in ms
 
         //on keyup, start the countdown
         $('.searchInput').keyup(function(obj){
+            if (typingTimer) {
+                clearTimeout(typingTimer);
+            }
             typingTimer = setTimeout(doneTyping, doneTypingInterval);
         });
 
