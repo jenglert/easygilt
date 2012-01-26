@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyText
+  brand: MyText
+  description: MyText
+  fit_notes: MyText
+  material: MyText
+  origin: MyText
+  url: MyText
+
+two:
+  name: MyText
+  brand: MyText
+  description: MyText
+  fit_notes: MyText
+  material: MyText
+  origin: MyText
+  url: MyText
