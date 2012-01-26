@@ -24,7 +24,51 @@ class ApiFetcher
   end
 
   def ApiFetcher.parse_api_file(api_file_location)
+    json_document = ""
+    file = File.new(api_file_location, "r")
+    while (line = file.gets)
+      json_document += line
+    end
+    file.close
 
+    json = JSON.parse(json_document)
+
+    json.each do |sale|
+      products = sale['products']
+      next if products.nil?
+      products.each do |product|
+        skus = product['skus']
+        brand = product['brand']
+        name = product['name']
+        url = product['url']
+        content_hash = product['content']
+        image_urls = product['image_urls']
+
+        product = Product.create!(:name => name, :url => url, :brand => brand)
+
+        image_urls.each do |image_url|
+          ProductImage.create(:product_id => product.id, :image_url => image_url)
+        end
+
+        skus.each do |sku|
+          msrp_price = sku['msrp_price']
+          sale_price = sku['sale_price']
+          attributes = sku['attributes']
+
+          product_sku = ProductSku.create!(:product_id => product.id, :msrp_price => msrp_price, :sale_price => sale_price)
+
+          next if attributes.nil?
+          attributes.each do |attribute|
+            attribute_name = attribute['name']
+            attribute_value = attribute['value']
+            ProductSkuAttribute.create(:product_sku_id => product_sku.id, :name => attribute_name, :value => attribute_value)
+          end
+
+        end
+      end
+    end
+
+    true
   end
 
 end
