@@ -41,10 +41,15 @@ class ApiFetcher
         brand = product['brand']
         name = product['name']
         url = product['url']
-        content_hash = product['content']
         image_urls = product['image_urls']
 
-        product = Product.create!(:name => name, :url => url, :brand => brand)
+        content_hash = product['content']
+        description = content_hash['description']
+        fit_notes = content_hash['fit_notes']
+        material = content_hash['material']
+        origin = content_hash['origin']
+
+        product = Product.create!(:name => name, :url => url, :brand => brand, :description => description, :fit_notes => fit_notes, :material => material, :origin => origin)
 
         image_urls.each do |image_url|
           ProductImage.create(:product_id => product.id, :image_url => image_url)

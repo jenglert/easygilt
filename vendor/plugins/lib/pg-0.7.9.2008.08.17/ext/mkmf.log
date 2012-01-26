@@ -1,0 +1,248 @@
+have_library: checking for main() in -lpq... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64   -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for libpq-fe.h... -------------------- yes
+
+"/usr/bin/gcc-4.2 -E -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libpq-fe.h>
+/* end */
+
+--------------------
+
+have_header: checking for libpq/libpq-fs.h... -------------------- yes
+
+"/usr/bin/gcc-4.2 -E -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common    conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include <libpq/libpq-fs.h>
+/* end */
+
+--------------------
+
+have_func: checking for PQconnectionUsedPassword()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘PQconnectionUsedPassword’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))PQconnectionUsedPassword; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { PQconnectionUsedPassword(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQisthreadsafe()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘PQisthreadsafe’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))PQisthreadsafe; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { PQisthreadsafe(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQprepare()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘PQprepare’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))PQprepare; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { PQprepare(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQexecParams()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘PQexecParams’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))PQexecParams; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { PQexecParams(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQescapeString()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘PQescapeString’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))PQescapeString; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { PQescapeString(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQescapeStringConn()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘PQescapeStringConn’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))PQescapeStringConn; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { PQescapeStringConn(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for lo_create()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘lo_create’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))lo_create; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { lo_create(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for pg_encoding_to_char()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘pg_encoding_to_char’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))pg_encoding_to_char; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { pg_encoding_to_char(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for PQsetClientEncoding()... -------------------- yes
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘PQsetClientEncoding’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))PQsetClientEncoding; return 0; }
+/* end */
+
+"/usr/bin/gcc-4.2 -o conftest -I. -I/opt/local/lib/ruby/1.8/i686-darwin10 -I. -I/usr/local/Cellar/postgresql/8.4.4/include -I/opt/local/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE  -I/opt/local/include -pipe -O2 -arch x86_64  -fno-common -pipe -fno-common   conftest.c  -L. -L/opt/local/lib -L/usr/local/Cellar/postgresql/8.4.4/lib -L. -L/opt/local/lib -arch x86_64  -arch x86_64  -lpq  -lruby-static -lpq  -lpthread -ldl -lobjc  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { PQsetClientEncoding(); return 0; }
+/* end */
+
+--------------------
+
