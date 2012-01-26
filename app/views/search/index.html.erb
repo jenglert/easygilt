@@ -1,7 +1,7 @@
 
 <div class="searchBar">
     <% form_tag url_for(:action => :index) do %>
-      <%= text_field_tag :query, "SEARCH HERE", :class => "searchInput", :autocomplete => "off" %>
+      <%= text_field_tag :query, @query || "SEARCH HERE", :class => "searchInput", :autocomplete => "off" %>
     <% end -%>
 </div>
 
