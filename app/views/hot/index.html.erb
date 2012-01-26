@@ -1,10 +1,11 @@
 <div class='hot_container'>
+  <h3>Which is the hotter style?</h3>
   <div class='left hot_competitor_container'>
     <% form_tag do %>
       <%= image_tag @product1.product_images.first.image_url %>
       <%= hidden_field_tag :winner, @product1.id %>
       <%= hidden_field_tag :loser, @product2.id %>
-      <%= submit_tag "This is hot" %>
+      <%= submit_tag "Hot!" %>
     <% end %>
   </div>
   <div class='right hot_competitor_container'>
@@ -12,7 +13,7 @@
       <%= image_tag @product2.product_images.first.image_url %>
       <%= hidden_field_tag :winner, @product2.id %>
       <%= hidden_field_tag :loser, @product1.id %>
-      <%= submit_tag "This is hot" %>
+      <%= submit_tag "Fab!" %>
     <% end %>
   </div>
 </div>
