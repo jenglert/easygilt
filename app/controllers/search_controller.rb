@@ -14,4 +14,11 @@ class SearchController < ApplicationController
       "%#{query}%"
       ])
   end
+
+
+  def single_item_style
+    @product = Product.first
+  end
+
 end
+
