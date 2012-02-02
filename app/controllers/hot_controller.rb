@@ -17,6 +17,7 @@ class HotController < ApplicationController
   end
 
   def top
+    @title = "Hottest products"
     limit = params[:limit].to_i
     limit = 10 if limit <= 0
     @products = Product.find_by_sql("select products.* from products join (select product_id, sum(case when is_winner then 1 else -1 end) as score from product_hot_votes group by product_id) as votes on products.id = votes.product_id and votes.score > 0 order by votes.score desc limit #{limit}")
@@ -24,6 +25,7 @@ class HotController < ApplicationController
   end
 
   def bottom
+    @title = "Coldest products"
     limit = params[:limit].to_i
     limit = 10 if limit <= 0
     @products = Product.find_by_sql("select products.* from products join (select product_id, sum(case when is_winner then 1 else -1 end) as score from product_hot_votes group by product_id) as votes on products.id = votes.product_id and votes.score < 0 order by votes.score limit #{limit}")

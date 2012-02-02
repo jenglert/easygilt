@@ -3,6 +3,7 @@ A { text-decoration: none; color: black }
 A:HOVER { text-decoration: none; color: black }
 A:VISITED { text-decoration: none; color: black }
 clearBoth { clear: both; }
+h2, h3 { color: gold; margin-bottom: 20px; text-align: center; }
 
 .body { background-color: black; }
 
@@ -28,6 +29,7 @@ clearBoth { clear: both; }
 .resultItem .label { color: gold; font-weight: bold; }
 
 /** Hot styling **/
-.hot_container { width: 200px; margin: 0 auto; margin-top: 30px; }
-.hot_competitor_container { width: 100px; float: left; }
+.hot_container { width: 250px; margin: 0 auto; margin-top: 30px; }
+.hot_competitor_container { width: 125px; float: left; }
 .hot_competitor_container img { display: block; width: 80px; margin-bottom: 10px; }
+.hot_competitor_container input[type=submit] { margin: 0 auto; width: 85px; height: 30px; font-size: 20px; color: black; background-color: gold; }
