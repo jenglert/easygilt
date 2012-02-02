@@ -20,7 +20,11 @@
         </script>
     </div>
     <div class="results" id="results">
-      <% if @results.nil? || @results.count == 0 %>
+      <% if @results.nil? %>
+          <div class="resultItem">
+              <div class="noItem">Start typing in the search bar above to see results.</div>
+          </div>
+      <% elsif @results.count == 0 %>
         <div class="resultItem">
             <div class="noItem">Nothing Found</div>
         </div>
