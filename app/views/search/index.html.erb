@@ -33,6 +33,9 @@
           <%= render :partial => 'result_item', :locals => { :product => product } %>
         <% end -%>
       <% end %>
+      <div class='resultItem noItem'>
+        Try playing our game to determine the <%= link_to 'hottest styles', url_for(:controller => :hot, :action => :index) -%>.
+      </div>
       <div class="clearBoth"></div>
     </div>
     <div class="rightAd">

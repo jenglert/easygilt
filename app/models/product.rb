@@ -35,4 +35,9 @@ class Product < ActiveRecord::Base
     colors.join(', ')
   end
 
+  def large_images
+    set_name = product_images.sort_by{ |image| image.height * image.width }.last.set_name
+    product_images.select{ |image| image.set_name == set_name }
+  end
+
 end

@@ -2,8 +2,9 @@
 A { text-decoration: none; color: black }
 A:HOVER { text-decoration: none; color: black }
 A:VISITED { text-decoration: none; color: black }
-clearBoth { clear: both; }
-h2, h3 { color: gold; margin-bottom: 20px; text-align: center; }
+.clearBoth { clear: both; }
+h2, h3, h3 a, h3 a:hover, h3 a:visited { color: gold; margin-bottom: 20px; text-align: center; }
+h3 a, h3 a:hover, h3 a:visited { text-decoration: underline; }
 
 .body { background-color: black; }
 
@@ -29,7 +30,7 @@ h2, h3 { color: gold; margin-bottom: 20px; text-align: center; }
 .resultItem .label { color: gold; font-weight: bold; }
 
 /** Hot styling **/
-.hot_container { width: 250px; margin: 0 auto; margin-top: 30px; }
-.hot_competitor_container { width: 125px; float: left; }
-.hot_competitor_container img { display: block; width: 80px; margin-bottom: 10px; }
-.hot_competitor_container input[type=submit] { margin: 0 auto; width: 85px; height: 30px; font-size: 20px; color: black; background-color: gold; }
+.hot_container { width: 900px; margin: 0 auto; margin-top: 30px; }
+.hot_competitor_container { width: 445px; float: left; }
+.hot_competitor_container img { display: block; width: 420px; margin-bottom: 10px; }
+.hot_competitor_container input[type=submit] { margin-left: 175px; width: 85px; height: 30px; font-size: 20px; color: black; background-color: gold; }
