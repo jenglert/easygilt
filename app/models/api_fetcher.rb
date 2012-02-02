@@ -74,13 +74,14 @@ class ApiFetcher
 
   def ApiFetcher.fetch_api_file(store)
     site = "api.gilt.com"
-    url_path = "/v1/#{store}/sales/active.json?apikey=#{API_KEY}&product_detail=true"
+    url_path = "/v1/sales/#{store}/active.json?apikey=#{API_KEY}&product_detail=true"
     file_name = "./api_downloads/sales_feed_#{Time.now.to_s}.api_download.json"
 
     http = Net::HTTP.new(site,443)
     http.use_ssl = true
 
     http.start { |http_connec|
+      puts "downloading from: https://#{site}/#{url_path}"
       resp = http_connec.get(url_path)
       open(file_name, "wb") { |file|
         file.write(resp.body)
@@ -100,7 +101,7 @@ class ApiFetcher
 
     json = JSON.parse(json_document)
 
-    json.each do |sale|
+    json['sales'].each do |sale|
       products = sale['products']
       next if products.nil?
       products.each do |product|
