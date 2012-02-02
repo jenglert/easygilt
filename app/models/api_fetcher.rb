@@ -109,7 +109,7 @@ class ApiFetcher
         brand = product['brand']
         name = product['name']
         url = product['url']
-        image_urls = product['image_urls']
+        image_sets = product['image_urls']
 
         content_hash = product['content']
         description = content_hash['description']
@@ -119,8 +119,10 @@ class ApiFetcher
 
         product = Product.create!(:name => name, :url => url, :brand => brand, :description => description, :fit_notes => fit_notes, :material => material, :origin => origin, :store => store)
 
-        image_urls.each do |image_url|
-          ProductImage.create(:product_id => product.id, :image_url => image_url)
+        image_sets.each do |set_name, image_set|
+          image_set.each do |image_url|
+            ProductImage.create(:product_id => product.id, :image_url => image_url['url'], :height => image_url['height'].to_i, :width => image_url['width'].to_i, :set_name => set_name)
+          end
         end
 
         skus.each do |sku|
