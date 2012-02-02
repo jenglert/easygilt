@@ -33,8 +33,10 @@ class ApiFetcher
             end
          end
 
+         total = keys.values.sum.to_f
+
          keys.each do |word, count|
-           SearchTerm.create!(:product_id => product.id, :term => word, :count => count)
+           SearchTerm.create!(:product_id => product.id, :term => word, :count => count, :percentage => count.to_f / total)
          end
        end
      end

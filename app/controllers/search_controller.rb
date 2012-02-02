@@ -22,7 +22,7 @@ class SearchController < ApplicationController
     words = ApiFetcher.clean_phrase(query)
     words = words.map { |word| "'" + word + "'" }
 
-    results = ActiveRecord::Base.connection.select_all("select product_id as product_id from search_terms where term in (#{words.join(', ')}) group by product_id order by count(*) desc, sum(\"count\") desc limit 50")
+    results = ActiveRecord::Base.connection.select_all("select product_id as product_id from search_terms where term in (#{words.join(', ')}) group by product_id order by sum(\"percentage\") desc limit 50")
 
     product_ids = results.map { |result| result['product_id'] }
 
