@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
-  has_many :product_images, :dependant => :destroy
-  has_many :product_skus, :dependant => :destroy
-  has_many :product_hot_votes, :dependant => :destroy
+  has_many :product_images, :dependent => :destroy
+  has_many :product_skus, :dependent => :destroy
+  has_many :product_hot_votes, :dependent => :destroy
 
   def top_three_images
     product_images[0..2]
